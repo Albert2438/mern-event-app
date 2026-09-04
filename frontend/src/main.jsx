@@ -8,20 +8,18 @@ import 'tachyons'
 import 'material-symbols';   
 import 'date-fns'
 
-import { WorkoutContextProvider } from './context/WorkoutContext.jsx';
-import { AuthContextProvider } from './context/AuthContext.jsx';
 
 
 
 
 createRoot(document.getElementById('root')).render(
-  <AuthContextProvider>
-    <WorkoutContextProvider>
+  
     <StrictMode>
-    <App darkMode={true}/>
+
+  <App darkMode={true}/>
+
   </StrictMode>
-  </WorkoutContextProvider>
-  </AuthContextProvider>
+  
 
   
   

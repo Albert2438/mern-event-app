@@ -1,6 +1,29 @@
 
-GET http://localhost:5000/api/workouts/
+
+GET http://localhost:5000/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTlhODZkOWFjN2Q0OGIyYzMwY2YzNWMiLCJpYXQiOjE3ODg1MTE5NjEsImV4cCI6MTc4ODc3MTE2MX0.1PqNPAFORNqAygr6kapcik2RLYYIr8FjTR6IOm4wFFc
+
+
+###
+POST http://localhost:5000/login
 Content-Type: application/json
+
+{
+    "email": "yoshi@netninja.com",
+    "password": "ABCanc123!"
+}
+
+###
+
+POST http://localhost:5000/signup 
+Content-Type: application/json
+
+{
+    "email": "albert@netninja.com",
+    "password": "ABCanc123!"
+}
+
+
 
 ###
 

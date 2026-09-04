@@ -1,5 +1,27 @@
+@import "tailwindcss";
+
+
+/* Custom animations - v4 uses --animate-* theme variables instead of
++   tailwind.config.js. Any keyframes defined inside @theme automatically
++   become available as an `animate-*` utility class. */
+@theme {
+  --animate-fade-in: fadeIn 0.4s ease-out;
+  --animate-slide-in: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /*Layout */
-:root {
+
+/* :root {
     --primary: green;
     --error: red;
 }
@@ -110,7 +132,7 @@ input.error {
 }
 
 /* navbar */
-nav{
+/* nav{
     display: flex;
     align-items: center;
 }
@@ -130,14 +152,14 @@ nav button{
     font-size: 1em;
     margin-left: 10px;
 
-}
+} */
 
 /* auth forms */
 
-form.signup, form.login {
+/* form.signup, form.login {
     max-width: 400px;
     margin: 40px auto;
     padding: 20px;
     background: #fff;
     border-radius: 4px;
-}
+} */ 
