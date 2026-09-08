@@ -28,7 +28,7 @@ mongoose.connect(process.env.URI)
     .then(()=>{
         console.log('Connected to mongodb successfully');
 
-        app.listen(process.env.PORT || 8000, (err)=>{
+        app.listen(process.env.PORT || 5000, (err)=>{
             if (err) console.log(err);
             console.log(`Server running successfully at ${process.env.PORT}`)
         })

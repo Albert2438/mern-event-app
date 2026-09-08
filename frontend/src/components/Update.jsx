@@ -18,16 +18,16 @@ function Update() {
   // fetch the existing event on mount, using the id pulled from the URL,
   // and pre-fill the form fields with what's already in the database
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/`, {headers: {Authorization: `Bearer: ${user.token}`}})
+    fetch(`${import.meta.env.VITE_API_URL}/${id}`, {headers: {Authorization: `Bearer: ${user.token}`}})
       .then((res) => {
         if (!res.ok) throw new Error(`Request failed: ${res.status}`);
         return res.json();
       })
       .then((data) => {
-        setTitle(data.title);
-        setDescription(data.description);
+        setTitle(data.title || '');
+        setDescription(data.description || '');
         setDate(new Date(data.date).toISOString().split('T')[0]);
-        setLocation(data.location);
+        setLocation(data.location || '');
         // setCapacity(data.capacity);
       })
       .catch((err) => console.log(err));
