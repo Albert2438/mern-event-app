@@ -13,7 +13,7 @@ function Read() {
   useEffect(() => {
     const loadEvents = async ()=>{
       try{
-        const res = await fetch('http://localhost:5000/',{
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/`,{
           headers: {
             'Authorization': `Bearer ${user.token}`
           }
@@ -39,7 +39,7 @@ function Read() {
 
   const handleDelete =  async (id) => {
     try{
-      const res = await fetch(`http://localhost:5000/${id}`, { method: 'DELETE', headers:{'Authorization': `Bearer ${user.token}`} });
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, { method: 'DELETE', headers:{'Authorization': `Bearer ${user.token}`} });
       if (!res.ok) throw new Error(`Request failed: ${res.status}`);
       //     // re-filter local state instead of re-fetching from the server -
     //     // cheaper, and keeps the UI snappy

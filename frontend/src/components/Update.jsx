@@ -18,7 +18,7 @@ function Update() {
   // fetch the existing event on mount, using the id pulled from the URL,
   // and pre-fill the form fields with what's already in the database
   useEffect(() => {
-    fetch(`http://localhost:5000/${id}`, {headers: {Authorization: `Bearer: ${user.token}`}})
+    fetch(`${import.meta.env.VITE_API_URL}/`, {headers: {Authorization: `Bearer: ${user.token}`}})
       .then((res) => {
         if (!res.ok) throw new Error(`Request failed: ${res.status}`);
         return res.json();
@@ -44,7 +44,7 @@ function Update() {
       return
     }
       
-      const res = await fetch(`http://localhost:5000/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json',
         'Authorization':  `Bearer ${user.token}`

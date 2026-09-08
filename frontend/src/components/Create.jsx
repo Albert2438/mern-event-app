@@ -32,7 +32,7 @@ function Create() {
     // unlike axios, fetch does NOT automatically stringify the body
     // or set the Content-Type header - both have to be done by hand,
     // or the backend will receive an unparsed/empty req.body
-    fetch('http://localhost:5000/', {
+    fetch(`${import.meta.env.VITE_API_URL}/`, {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
