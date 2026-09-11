@@ -22,19 +22,19 @@ function Navbar() {
 
   return (
     <>
-    <nav className='flex justify-center md:justify-end items-center gap-1 bg-white/80 backdrop-blur-sm shadow-sm px-6 py-4 sticky top-0 z-10'>
+    <nav className='flex flex-wrap justify-center md:justify-end items-center gap-2 bg-white/80 backdrop-blur-sm shadow-sm px-4 sm:px-6 py-3 sticky top-0 z-10'>
       {user && (
         <>
-      <Link to="/home" className='no-underline text-slate-700 hover:text-emerald-600 transition-colors duration-200 px-3 py-1.5 rounded-md hover:bg-emerald-50'>All Events</Link>
-      <Link to="/create" className='no-underline text-slate-700 hover:text-emerald-600 transition-colors duration-200 px-3 py-1.5 rounded-md hover:bg-emerald-50'>Create Event</Link>
-      <span className='text-black'>{user.email}</span>
-      <button className='bg-white text-green-500 border-b-green-500 px-6 py-10' onClick={handleLogout}>Logout</button>
+      <Link to="/home" className='no-underline text-sm sm:text-base text-slate-700 hover:text-emerald-600 transition-colors duration-200 px-2.5 sm:px-3 py-1.5 rounded-md hover:bg-emerald-50'>All Events</Link>
+      <Link to="/create" className='no-underline text-sm sm:text-base text-slate-700 hover:text-emerald-600 transition-colors duration-200 px-2.5 sm:px-3 py-1.5 rounded-md hover:bg-emerald-50'>Create Event</Link>
+      <span className='hidden sm:inline text-black text-sm truncate max-w-[160px]'>{user.email}</span>
+      <button className='bg-white text-green-500 border-b-2 border-b-green-500 px-3 py-1.5 text-sm sm:text-base hover:bg-emerald-50 rounded-md transition-colors duration-200' onClick={handleLogout}>Logout</button>
         </>
       )}
       
       {!user &&(
         <>
-        <div>
+        <div className='flex flex-wrap justify-center md:justify-end items-center gap-2 bg-white/80 backdrop-blur-sm shadow-sm px-4 sm:px-6 py-3 sticky top-0 z-10 flex gap-1'>
         <Link to="/login" className='no-underline text-slate-700 hover:text-emerald-600 transition-colors duration-200 px-3 py-1.5 rounded-md hover:bg-emerald-50'>Login</Link>
         <Link to="/signup" className='no-underline text-slate-700 hover:text-emerald-600 transition-colors duration-200 px-3 py-1.5 rounded-md hover:bg-emerald-50'>Signup</Link>
       </div>
